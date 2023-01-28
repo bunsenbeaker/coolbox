@@ -1,0 +1,79 @@
+.boxes-container {   
+   position: relative;
+   --boxes-vertical-gap: 50px;
+   --connectors-thickness: 6px;
+
+   .box {
+    width: min-content;
+    border-radius: 5px;
+    background-color:darkcyan;
+    color: yellowgreen;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(100% + var(--boxes-vertical-gap));
+    left: 100%;
+    box-sizing: border-box;
+
+     
+    &.first {
+        position: relative;
+        top:0;
+        left: 0;
+
+        &::before{
+            border: none;
+        }
+    }
+
+    &.last {
+        &::after {
+            border: none;
+        }
+    }
+
+    &::after{
+        content: '';
+        width: calc(50% +  var(--connectors-thickness));
+        height: calc(var(--boxes-vertical-gap) / 2);
+        border-left: var(--connectors-thickness) solid red;
+        border-bottom: var(--connectors-thickness) solid red;
+        position: absolute;
+        top: 100%;
+        left: calc(50% - var(--connectors-thickness) / 2);
+        border-radius: 0 0 0 5px;
+        box-sizing: border-box;
+        animation: connectorsop 0.75s ease-in-out;
+        animation-delay: calc(var(--boxIndex) * 0.25s);
+
+    }
+
+    &::before {
+        content: '';
+        width: calc(50% + 1px);
+        height: calc((var(--boxes-vertical-gap) / 2) + var(--connectors-thickness));
+        border-right: var(--connectors-thickness) solid red;
+        border-top: var(--connectors-thickness) solid red;
+        position: absolute;
+        top: calc((var(--boxes-vertical-gap) / -2) - var(--connectors-thickness)); 
+        right: calc(50% - var(--connectors-thickness) / 2);
+        border-radius: 0 5px 0 0;
+        box-sizing: border-box;
+        animation: connectorsop 0.75s ease-in-out;
+    }
+}
+
+}
+
+
+@keyframes connectorsop {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
