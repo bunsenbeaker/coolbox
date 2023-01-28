@@ -13,6 +13,7 @@ export class AppComponent {
     'bbb',
     'cccccccccccccc',
     'dddddddddddddddddddddddddddddddddddddddddddddddddd',
-    'eeeee'
+    'eeeee',
+    'ff'
   ];
 }

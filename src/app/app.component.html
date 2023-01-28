@@ -1,23 +1,5 @@
-<!--   <app-cool-box class="box first">
-    aaaaaaaaaaaaaaaaa
-    <app-cool-box class="box">
-      bbbbbbbbbbbbbbbbbbbbbbbbbb
-      <app-cool-box class="box">
-        ccc
-        <app-cool-box class="box">
-          dddddddddddddddddddddddddddddddddddddddddd
-          <app-cool-box class="box">
-            ee
-          </app-cool-box>
-        </app-cool-box>
-      </app-cool-box>
-    </app-cool-box>
-  </app-cool-box> -->
     <app-boxes-container>
-      <div *coolConnectedBox>aaa</div>
-      <div *coolConnectedBox>bbbbbbb</div>
-      <div *coolConnectedBox>cccccccccccccc</div>
-      <div *coolConnectedBox>dd</div>
-      <div *coolConnectedBox>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>
-      <div *coolConnectedBox>fffffff</div>
+      <ng-container *ngFor="let boxContent of boxesContent">
+        <div *coolConnectedBox>{{boxContent}}</div>
+      </ng-container>
     </app-boxes-container>

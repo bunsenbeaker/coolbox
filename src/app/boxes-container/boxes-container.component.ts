@@ -10,6 +10,7 @@ import { CoolConnectedBoxDirective } from '../cool-connected-box.directive';
 export class BoxesContainerComponent implements AfterContentInit, AfterViewInit {
 
  @ContentChildren(CoolConnectedBoxDirective) boxes?: QueryList<CoolConnectedBoxDirective>;
+ 
  @ViewChild('boxesContainer', { read: ViewContainerRef}) boxesContainer?: ViewContainerRef;
 
  public boxesArray: CoolConnectedBoxDirective[] = [];
